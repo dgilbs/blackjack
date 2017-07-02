@@ -44,8 +44,11 @@
       }
     }
     console.log(cards)
-    var randomNum = Math.floor((Math.random()*52)+1);
-
+    function randCard(){
+      var randomNum = Math.floor((Math.random() * 52));
+      output.innerHTML += "<span style='color:" + cards[randomNum].bgcolor + "'>&" + cards[randomNum].icon + ";" + cards[randomNum].cardnum + "</span>  ";
+    }
+    randCard();
   </script>
 </body>
 </html>

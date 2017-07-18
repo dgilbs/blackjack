@@ -50,11 +50,21 @@
       }
     }
     console.log(cards)
-    function randCard(){
-      var randomNum = Math.floor((Math.random() * 52));
-      output.innerHTML += "<span style='color:" + cards[randomNum].bgcolor + "'>&" + cards[randomNum].icon + ";" + cards[randomNum].cardnum + "</span>  ";
+    function Start(){
+      outputCard();
+      shuffleDeck(cards);
+      outputCard();
     }
-    randCard();
+
+    function shuffleDeck(array){
+      
+        
+    }
+
+    function outputCard(){
+      output.innerHTML += "<span style='color:" + cards[0].bgcolor + "'>&" + cards[0].icon + ";" + cards[0].cardnum + "</span> ";
+    }
+    Start();
   </script>
 </body>
 </html>

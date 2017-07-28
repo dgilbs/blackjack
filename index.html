@@ -25,13 +25,18 @@
     </div>
   </div>
   <div id="output">
-
+    <div id="dealerHolder"></div>
+    <div id="output"></div>
   </div>
   <script>
     var cards = [];
+    var playerCard = [];
+    var dealerCard = [];
     var suits = ["spades","hearts","clubs","diams"];
     var numb = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
     var output = document.getElementById("output")
+    var dealerHolder = document.getElementById("dealerHolder")
+    var playerHolder = document.getElementById("playerHolder")
     for (s in suits){
       var suit = suits[s][0].toUpperCase();
       var bgcolor = (suit == "S" || suit == "C") ? "black" : "red"
@@ -51,20 +56,33 @@
     }
     console.log(cards)
     function Start(){
-      outputCard();
       shuffleDeck(cards);
+      dealNew();
       outputCard();
     }
 
     function shuffleDeck(array){
-      
-        
+      for(var i = array.length-1; i>0; i--){
+        var j = Math.floor(Math.random() * (i+1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      return array;
     }
 
     function outputCard(){
-      output.innerHTML += "<span style='color:" + cards[0].bgcolor + "'>&" + cards[0].icon + ";" + cards[0].cardnum + "</span> ";
+      output.innerHTML += "<span style='color:" + cards[0].bgcolor + "'>" + cards[0].cardnum + "&" + cards[0].icon + ";</span> ";
+
+      
+    }
+
+    function dealNew(){
+
     }
     Start();
+      
+      
   </script>
 </body>
 </html>

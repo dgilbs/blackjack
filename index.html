@@ -14,6 +14,18 @@
   .hearts, .diams{
 
   }
+
+  .icard{
+    height: 160px;
+    width: 120px;
+    padding: 3px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    position:absolute;
+    left: 100px;
+    display: inline-block;
+  }
   </style>
   <title></title>
 </head>
@@ -25,8 +37,11 @@
     </div>
   </div>
   <div id="output">
-    <div id="dealerHolder"></div>
-    <div id="playerHolder"></div>
+    Dealer Hand: <div id="dealerHolder"></div>
+    Player Hand: <div id="playerHolder"></div>
+  </div>
+
+  <div class="icard">
   </div>
   <script>
     var cards = [];
